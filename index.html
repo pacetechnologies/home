@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Custom Chrome Home - Your personalized dashboard for quick links and dynamic greetings.">
+    <link rel="icon" href="images/logo2024.jpg" type="image/x-icon">
+    <title>Homepage</title>
+    <link rel="stylesheet" href="styles.css">
+    <noscript>
+        <style>
+            .quick-links { display: none; }
+            .no-js-message { display: block; }
+        </style>
+    </noscript>
+</head>
+<body>
+    <button onclick="toggleTheme()" class="theme-toggle">Toggle Theme</button>
+
+    <div class="container">
+        <!-- Header Section -->
+        <header class="header" role="banner">
+            <h1 class="main-greeting" aria-live="polite">Loading...</h1>
+            <p class="sub-greeting" aria-live="polite"></p>
+            <p class="fun-fact" aria-live="polite"></p>
+            <!-- Dynamic Info Section -->
+            <div class="dynamic-info">
+                <p class="current-date">Date: Loading...</p>
+                <p class="local-time">Time: Loading...</p>
+                <p class="local-weather">Weather: Loading...</p>
+            </div>
+        </header>
+
+        <!-- No JavaScript Message -->
+        <p class="no-js-message" style="display: none;">
+            JavaScript is required to use this page. Please enable it in your browser settings.
+        </p>
+
+        <!-- Quick Links Section -->
+        <section class="quick-links" role="navigation" aria-label="Quick Links">
+            <a class="link-card" href="https://outlook.office365.com/" target="_blank" rel="noopener noreferrer" aria-label="Outlook">
+                <img src="images/outlook-email.png" alt="Outlook Icon">
+                <span>Outlook</span>
+            </a>
+            <a class="link-card" href="https://outlook.office365.com/calendar/view/week" target="_blank" rel="noopener noreferrer" aria-label="Outlook Calendar">
+                <img src="images/outlook-calendar.webp" alt="Calendar Icon">
+                <span>Calendar</span>
+            </a>
+            <a class="link-card" href="https://slack.com/" target="_blank" rel="noopener noreferrer" aria-label="Slack">
+                <img src="images/slack.png" alt="Slack Icon">
+                <span>Slack</span>
+            </a>
+            <a class="link-card" href="https://app.hubspot.com" target="_blank" rel="noopener noreferrer" aria-label="HubSpot">
+                <img src="images/hubspot.webp" alt="HubSpot Icon">
+                <span>HubSpot</span>
+            </a>
+            <a class="link-card" href="https://app.clickup.com/" target="_blank" rel="noopener noreferrer" aria-label="ClickUp">
+                <img src="images/clickup.webp" alt="ClickUp Icon">
+                <span>ClickUp</span>
+            </a>
+            <a class="link-card" href="https://web.akiflow.com/#/planner/today" target="_blank" rel="noopener noreferrer" aria-label="Akiflow">
+                <img src="images/akiflow.svg" alt="Akiflow Icon">
+                <span>Akiflow</span>
+            </a>
+            <a class="link-card" href="https://metallographic.com/" target="_blank" rel="noopener noreferrer" aria-label="Metallographic">
+                <img src="images/logo2024.jpg" alt="Metallographic Icon">
+                <span>Metallographic</span>
+            </a>
+            <a class="link-card" href="https://youtube.com/" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+                <img src="images/youtube.webp" alt="YouTube Icon">
+                <span>YouTube</span>
+            </a>
+        </section>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
+

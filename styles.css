@@ -1,0 +1,223 @@
+:root {
+    --bg-gradient: linear-gradient(135deg, #1e1e1e, #3c3c3c);
+    --card-gradient: linear-gradient(145deg, #333333, #292929);
+    --text-color: #ffffff;
+    --subtext-color: #bbbbbb;
+    --hover-highlight: rgba(255, 255, 255, 0.08);
+    --focus-outline: #ffdd57;
+    --gap: 20px;
+    --transition-speed: 0.3s;
+
+    /* Light Mode Variables */
+    --light-bg-gradient: linear-gradient(135deg, #ffffff, #f0f0f0);
+    --light-card-gradient: linear-gradient(145deg, #ffffff, #e0e0e0);
+    --light-text-color: #333333;
+    --light-subtext-color: #555555;
+    --light-hover-shadow: rgba(0, 0, 0, 0.2);
+    --light-box-shadow: rgba(0, 0, 0, 0.1);
+}
+
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    background: var(--bg-gradient);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+/* Container */
+.container {
+    max-width: 900px;
+    padding: 20px;
+    text-align: center;
+    animation: fadeIn 1.2s ease-in-out;
+}
+
+/* Header */
+.header h1 {
+    font-size: 2.8rem;
+    margin-bottom: 15px;
+    color: var(--text-color);
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+    transition: color var(--transition-speed), text-shadow var(--transition-speed);
+}
+
+.header p {
+    font-size: 1.3rem;
+    color: var(--subtext-color);
+    margin-top: 10px;
+}
+
+/* Dynamic Info */
+.dynamic-info {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    color: var(--subtext-color);
+}
+
+.dynamic-info p {
+    margin: 5px 0;
+}
+
+/* Quick Links Section */
+.quick-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--gap);
+    justify-content: center;
+    margin-top: 50px;
+}
+
+/* Link Card */
+.link-card {
+    background: var(--card-gradient);
+    border-radius: 15px;
+    width: 150px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: box-shadow var(--transition-speed);
+    cursor: pointer;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.link-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--hover-highlight);
+    z-index: 1;
+    opacity: 0;
+    transition: opacity var(--transition-speed);
+}
+
+.link-card:hover::before {
+    opacity: 1;
+}
+
+.link-card:hover {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.8), 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+.link-card img {
+    width: 65px;
+    height: 65px;
+    margin-bottom: 10px;
+    z-index: 2;
+    position: relative;
+}
+
+.link-card span {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--text-color);
+    z-index: 2;
+    position: relative;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .link-card {
+        width: 120px;
+        height: 120px;
+    }
+
+    .link-card img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .link-card span {
+        font-size: 1rem;
+    }
+
+    .header h1 {
+        font-size: 2rem;
+    }
+
+    .header p {
+        font-size: 1rem;
+    }
+
+    .quick-links {
+        gap: calc(var(--gap) / 2);
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Light Mode */
+body.light-mode {
+    background: var(--light-bg-gradient);
+    color: var(--light-text-color);
+}
+
+body.light-mode .header h1 {
+    color: var(--light-text-color);
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+body.light-mode .header p {
+    color: var(--light-subtext-color);
+}
+
+body.light-mode .link-card {
+    background: var(--light-card-gradient);
+    box-shadow: 0 4px 10px var(--light-box-shadow);
+}
+
+body.light-mode .link-card:hover {
+    box-shadow: 0 8px 20px var(--light-hover-shadow);
+}
+
+body.light-mode .link-card span {
+    color: var(--light-text-color);
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    padding: 10px 20px;
+    background: var(--card-gradient);
+    color: var(--text-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background var(--transition-speed);
+}
+
+.theme-toggle:hover {
+    background: #555;
+}
